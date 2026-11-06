@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 # 文件夹打包（启动快、兼容性好）：
 #   uv run pyinstaller main.spec --noconfirm
-#   → dist/mstsc-manager/mstsc-manager.exe（依赖放在 dist/mstsc-manager/lib/）
+#   → dist/mstsc-manager/mstsc-manager.exe（依赖放在 dist/mstsc-manager/mstsc-manager-lib/）
 
 a = Analysis(
     ['main.py'],

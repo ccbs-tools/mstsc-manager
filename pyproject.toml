@@ -1,6 +1,6 @@
 [project]
 name = "mstsc-manager"
-version = "0.1.0"
+version = "0.1.1"
 description = "远程桌面(mstsc)连接管理器，支持 SSH 本地端口转发隧道"
 requires-python = ">=3.12"
 dependencies = [

@@ -12,6 +12,19 @@ REPO_HOME = "https://github.com/ccbs-tools/mstsc-manager"
 
 RELEASES: tuple[dict, ...] = (
     {
+        "version": "0.1.1",
+        "date": "2026-11-07",
+        "notes": {
+            "zh": [
+                "打包：依赖目录由 lib 改名为 mstsc-manager-lib，解压到已有目录时不易与其他程序的 lib 目录混淆。",
+            ],
+            "en": [
+                "Packaging: the dependency folder is now named mstsc-manager-lib instead of lib, "
+                "so it does not clash with other programs' lib folders when unpacked into a shared directory.",
+            ],
+        },
+    },
+    {
         "version": "0.1.0",
         "date": "2026-11-06",
         "notes": {
