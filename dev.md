@@ -30,7 +30,7 @@ mstsc_manager/
   storage.py                 配置 JSON 读写与备份
   i18n.py                    中英文文案表，tr() / i18n.languageChanged
   log.py                     loguru 日志；接管未捕获异常、Qt 消息、stdlib logging（paramiko）
-  changelog.py               版本历史（Release 说明从这里生成）
+  changelog.py               版本历史（Release 说明从这里生成）+ GitHub Releases 检查更新
   netutil.py                 本地端口检查、TCP 探测
   tunnel.py                  paramiko 本地端口转发（ssh -L）
   rdp.py                     生成 mstsc 命令行 / .rdp 文件并启动
@@ -38,6 +38,7 @@ mstsc_manager/
   ui/main_window.py          主窗口、菜单、工具栏、会话管理
   ui/connection_form.py      连接配置表单
   ui/status_panel.py         步骤状态 + 日志面板
+  ui/version_dialogs.py      版本介绍 / 检查更新对话框
   ui/icons.py                应用图标
 assets/                      图标与 README 截图（rdp.png、ssh-tunnel.png）
 README.md / README_zh.md     面向用户的说明（英文为主 / 中文）

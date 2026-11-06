@@ -21,6 +21,7 @@ configured the app checks the local port, logs in to the jump host, probes the t
 - **Tunnel lifecycle**: the tunnel closes automatically when the `mstsc` window exits (configurable); a dropped SSH session is flagged in red.
 - **Two launch modes**: command-line arguments (default; no security prompt on current Windows) or a generated `.rdp` file (more options).
 - **Import / export** the connection list as JSON; **English / Chinese** UI.
+- **Help menu**: version history and *Check for Updates* against GitHub Releases, with a one-click download link.
 
 ## Download
 

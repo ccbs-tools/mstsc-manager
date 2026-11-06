@@ -22,6 +22,7 @@ from PySide6.QtWidgets import (
 )
 
 from .. import __version__
+from ..changelog import REPO_HOME
 from ..i18n import LANGUAGES, i18n, tr
 from ..log import LOG_DIR, LOG_FILE, logger
 from ..models import SSH_AUTH_KEY, SSH_AUTH_PASSWORD, Connection
@@ -29,6 +30,7 @@ from ..session import S_CONNECTING, S_IDLE, S_RUNNING, ST_IDLE, STEPS, SessionWo
 from ..storage import app_data_dir, config_path, load_connections, save_connections
 from .connection_form import ConnectionForm
 from .status_panel import STATUS_COLORS, StatusPanel, dot_pixmap
+from .version_dialogs import ChangelogDialog, UpdateCheckDialog
 
 ROLE_ID = Qt.ItemDataRole.UserRole
 
@@ -76,6 +78,9 @@ class MainWindow(QMainWindow):
         self.act_connect = QAction(self, shortcut="F5", triggered=lambda: self._start(test_only=False))
         self.act_disconnect = QAction(self, shortcut="F7", triggered=self._stop)
         self.act_open_log_dir = QAction(self, triggered=self._open_log_dir)
+        self.act_repo = QAction(self, triggered=self._open_repo)
+        self.act_changelog = QAction(self, triggered=self._show_changelog)
+        self.act_check_update = QAction(self, triggered=self._show_update_check)
         self.act_about = QAction(self, triggered=self._about)
 
         self._lang_group = QActionGroup(self)
@@ -105,7 +110,11 @@ class MainWindow(QMainWindow):
             self.menu_lang.addAction(a)
 
         self.menu_help = mb.addMenu("")
+        self.menu_help.addAction(self.act_repo)
         self.menu_help.addAction(self.act_open_log_dir)
+        self.menu_help.addSeparator()
+        self.menu_help.addAction(self.act_changelog)
+        self.menu_help.addAction(self.act_check_update)
         self.menu_help.addSeparator()
         self.menu_help.addAction(self.act_about)
 
@@ -176,6 +185,9 @@ class MainWindow(QMainWindow):
         self.act_open_dir.setText(tr("menu.open_dir"))
         self.act_quit.setText(tr("menu.quit"))
         self.act_open_log_dir.setText(tr("menu.open_log_dir"))
+        self.act_repo.setText(tr("menu.repo"))
+        self.act_changelog.setText(tr("menu.changelog"))
+        self.act_check_update.setText(tr("menu.check_update"))
         self.act_about.setText(tr("menu.about"))
         # 工具栏按钮用短文案
         self.act_new.setIconText(tr("tb.new"))
@@ -394,6 +406,16 @@ class MainWindow(QMainWindow):
 
     def _open_log_dir(self):
         QDesktopServices.openUrl(QUrl.fromLocalFile(str(LOG_DIR)))
+
+    def _open_repo(self):
+        ok = QDesktopServices.openUrl(QUrl(REPO_HOME))
+        logger.info("open repository homepage {} -> {}", REPO_HOME, "ok" if ok else "failed")
+
+    def _show_changelog(self):
+        ChangelogDialog(self).exec()
+
+    def _show_update_check(self):
+        UpdateCheckDialog(self).exec()
 
     def _about(self):
         import paramiko
