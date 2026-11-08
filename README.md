@@ -1,6 +1,6 @@
 # Remote Desktop Manager (mstsc-manager)
 
-**English** | [中文](README_zh.md)
+**English** | [中文](README.zh.md)
 
 A small Windows tool that keeps your Remote Desktop (`mstsc`) connections in one list and launches them with one click —
 optionally **through an SSH jump host**. For each connection you can pick a resolution preset, and when a tunnel is
@@ -38,7 +38,7 @@ Needs [uv](https://docs.astral.sh/uv/) (it will fetch Python 3.12 itself):
 git clone https://github.com/ccbs-tools/mstsc-manager.git
 cd mstsc-manager
 uv sync
-uv run python main.py        # or double-click run.cmd
+uv run python -m mstsc_manager   # or double-click run.cmd
 ```
 
 ## Usage

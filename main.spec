@@ -4,7 +4,7 @@
 #   → dist/mstsc-manager/mstsc-manager.exe（依赖放在 dist/mstsc-manager/mstsc-manager-lib/）
 
 a = Analysis(
-    ['main.py'],
+    ['run.py'],
     pathex=[],
     binaries=[],
     datas=[('assets/icon.ico', 'assets'), ('assets/icon.png', 'assets')],

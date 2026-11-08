@@ -37,7 +37,7 @@
 git clone https://github.com/ccbs-tools/mstsc-manager.git
 cd mstsc-manager
 uv sync
-uv run python main.py        # 或双击 run.cmd
+uv run python -m mstsc_manager   # 或双击 run.cmd
 ```
 
 ## 使用

@@ -6,7 +6,8 @@
 
 ```powershell
 uv sync --group dev      # 安装运行依赖 + pyinstaller
-uv run python main.py    # 源码运行
+uv run python -m mstsc_manager   # 源码运行
+uv run pyinstaller main.spec --noconfirm   # 本地打包 → dist\mstsc-manager\mstsc-manager.exe
 build.cmd                # 本地打包 → dist\mstsc-manager\mstsc-manager.exe，并压缩成 zip
 ```
 
@@ -23,9 +24,11 @@ build.cmd                # 本地打包 → dist\mstsc-manager\mstsc-manager.exe
 ## 目录
 
 ```
-main.py                      入口：日志初始化、QApplication、主窗口
+run.py                       PyInstaller 入口（转调 mstsc_manager.__main__:main）
 main.spec                    PyInstaller 文件夹打包配置（裁掉未用的 Qt 模块）
 mstsc_manager/
+  __init__.py                APP_NAME、__version__
+  __main__.py                入口：日志初始化、QApplication、主窗口
   models.py                  Connection / RdpConfig / SshConfig 数据模型
   storage.py                 配置 JSON 读写与备份
   i18n.py                    中英文文案表，tr() / i18n.languageChanged
@@ -41,7 +44,7 @@ mstsc_manager/
   ui/version_dialogs.py      版本介绍 / 检查更新对话框
   ui/icons.py                应用图标
 assets/                      图标与 README 截图（rdp.png、ssh-tunnel.png）
-README.md / README_zh.md     面向用户的说明（英文为主 / 中文）
+README.md / README.zh.md     面向用户的说明（英文为主 / 中文）
 ```
 
 ## 文案
