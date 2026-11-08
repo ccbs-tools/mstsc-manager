@@ -14,11 +14,11 @@ build.cmd                # 本地打包 → dist\mstsc-manager\mstsc-manager.exe
 
 | 内容 | 位置 |
 | --- | --- |
-| 连接配置 | `%APPDATA%\mstsc-manager\connections.json`（上一版自动备份为 `.bak`） |
-| SSH 主机密钥 | `%APPDATA%\mstsc-manager\known_hosts` |
-| 日志 | `%APPDATA%\mstsc-manager\logs\app.log`（10 MB 轮转，保留 3 个） |
+| 连接配置 | `%APPDATA%\ccbs\mstsc-manager\connections.json`（上一版自动备份为 `.bak`） |
+| SSH 主机密钥 | `%APPDATA%\ccbs\mstsc-manager\known_hosts` |
+| 日志 | `%APPDATA%\ccbs\mstsc-manager\logs\app.log`（10 MB 轮转，保留 3 个） |
 | 语言设置 | QSettings（注册表 `HKCU\Software\ccbs\mstsc-manager`） |
-| .rdp 临时文件 | `%LOCALAPPDATA%\mstsc-manager\sessions\` |
+| .rdp 临时文件 | `%LOCALAPPDATA%\ccbs\mstsc-manager\sessions\` |
 
 ## 目录
 

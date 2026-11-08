@@ -34,6 +34,21 @@ UPDATE_CHECK_TIMEOUT_S = 20.0
 
 RELEASES: tuple[dict, ...] = (
     {
+        "version": "0.1.3",
+        "date": "2026-11-08",
+        "notes": {
+            "zh": [
+                "数据目录统一到 %APPDATA%\\ccbs\\mstsc-manager\\（连接配置、known_hosts、日志）；临时 .rdp 文件移到 %LOCALAPPDATA%\\ccbs\\mstsc-manager\\sessions\\。"
+                "从旧版升级请手动把 %APPDATA%\\mstsc-manager\\ 整个目录移到 %APPDATA%\\ccbs\\ 下。",
+            ],
+            "en": [
+                "Data folder unified under %APPDATA%\\ccbs\\mstsc-manager\\ (connections, known_hosts, logs); "
+                "temporary .rdp files now live in %LOCALAPPDATA%\\ccbs\\mstsc-manager\\sessions\\. "
+                "Upgrading from an older version: move the whole %APPDATA%\\mstsc-manager\\ folder into %APPDATA%\\ccbs\\.",
+            ],
+        },
+    },
+    {
         "version": "0.1.2",
         "date": "2026-11-07",
         "notes": {

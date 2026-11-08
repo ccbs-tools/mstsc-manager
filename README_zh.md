@@ -65,9 +65,9 @@ uv run python main.py        # 或双击 run.cmd
 
 | 内容 | 位置 |
 |---|---|
-| 连接配置 | `%APPDATA%\mstsc-manager\connections.json`（上一版保留为 `.bak`） |
-| 跳板机主机密钥 | `%APPDATA%\mstsc-manager\known_hosts` |
-| 日志 | `%APPDATA%\mstsc-manager\logs\app.log`（菜单「帮助 → 打开日志目录」） |
+| 连接配置 | `%APPDATA%\ccbs\mstsc-manager\connections.json`（上一版保留为 `.bak`） |
+| 跳板机主机密钥 | `%APPDATA%\ccbs\mstsc-manager\known_hosts` |
+| 日志 | `%APPDATA%\ccbs\mstsc-manager\logs\app.log`（菜单「帮助 → 打开日志目录」） |
 
 ## 打包（onedir）
 

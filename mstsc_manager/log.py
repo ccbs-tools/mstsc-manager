@@ -1,6 +1,7 @@
 """Logging (loguru).
 
-File: %APPDATA%\\mstsc-manager\\logs\\app.log, rotated at 10 MB, 3 files kept (including current).
+File: %APPDATA%\\ccbs\\mstsc-manager\\logs\\app.log, rotated at 10 MB, 3 files kept (including current).
+APP_DATA_DIR (%APPDATA%\\ccbs\\mstsc-manager) is also the home of connections.json / known_hosts (see storage.py).
 Usage:
     from .log import logger
     logger.info("...")
@@ -20,7 +21,8 @@ from loguru import logger
 
 from . import APP_NAME
 
-LOG_DIR = Path(os.environ.get("APPDATA") or Path.home()) / APP_NAME / "logs"
+APP_DATA_DIR = Path(os.environ.get("APPDATA") or Path.home()) / "ccbs" / APP_NAME
+LOG_DIR = APP_DATA_DIR / "logs"
 LOG_FILE = LOG_DIR / "app.log"
 ROTATION = "10 MB"
 RETENTION = 3
@@ -109,4 +111,4 @@ def _install_qt_handler() -> None:
     QtCore.qInstallMessageHandler(handler)
 
 
-__all__ = ["logger", "setup_logging", "LOG_DIR", "LOG_FILE"]
+__all__ = ["logger", "setup_logging", "APP_DATA_DIR", "LOG_DIR", "LOG_FILE"]

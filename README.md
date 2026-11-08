@@ -1,4 +1,4 @@
-﻿# Remote Desktop Manager (mstsc-manager)
+# Remote Desktop Manager (mstsc-manager)
 
 **English** | [中文](README_zh.md)
 
@@ -69,9 +69,9 @@ Keyboard: `Ctrl+N` new · `Ctrl+D` duplicate · `Del` delete · `F5` connect · 
 
 | What | Where |
 |---|---|
-| Connections | `%APPDATA%\mstsc-manager\connections.json` (previous version kept as `.bak`) |
-| Jump-host keys | `%APPDATA%\mstsc-manager\known_hosts` |
-| Logs | `%APPDATA%\mstsc-manager\logs\app.log` (*Help → Open Log Folder*) |
+| Connections | `%APPDATA%\ccbs\mstsc-manager\connections.json` (previous version kept as `.bak`) |
+| Jump-host keys | `%APPDATA%\ccbs\mstsc-manager\known_hosts` |
+| Logs | `%APPDATA%\ccbs\mstsc-manager\logs\app.log` (*Help → Open Log Folder*) |
 
 ## Package (onedir)
 
