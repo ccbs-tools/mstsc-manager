@@ -1,6 +1,7 @@
 # mstsc-manager — AI 协作说明
 
-本项目遵循 CCBS 桌面工具统一规范（Python + PySide6 + uv + PyInstaller + GitHub Actions）。
+本项目遵循 CCBS 桌面工具统一规范（Python + PySide6 + uv + PyInstaller + GitHub Actions），
+本项目的组织取值（规范 §0）：ORG = `ccbs`，GH_ORG = `ccbs-tools`。
 
 - 完整规范：`../dev-rules/CONVENTIONS.md`（与本仓库同级的 `dev-rules` 目录）。
 - 可复制的模板文件：`../dev-rules/templates/`。
@@ -14,3 +15,10 @@
 - 日志用 `from .log import logger`，文本英文，不记录任何秘密。
 - 发版改三处版本号：`mstsc_manager/__init__.py`、`pyproject.toml`、`changelog.py` 的 `RELEASES`；推 `vX.Y.Z` tag 触发 CI。
 - 代码注释与 docstring 用中文。
+
+## 与规范的差异
+
+只记当前仍存在、有意保留的差异；每条注明违反的章节与原因，对齐后删除。迁移说明写 `changelog.py` 的 `RELEASES`。
+
+- §7：`main.spec` 除 `excludes` 外还按路径前缀裁剪 Qt 运行库（Qt 模块多，只靠 `excludes` 包体仍偏大）。
+- §5：`.rdp` 临时文件放 `%LOCALAPPDATA%\ccbs\mstsc-manager\sessions\`（`storage.sessions_dir()`）而不是 `%APPDATA%`（纯本机临时文件，不应随漫游配置同步）。

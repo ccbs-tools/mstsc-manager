@@ -20,7 +20,7 @@ def main(argv: list[str] | None = None) -> int:
     from PySide6.QtGui import QFont
     from PySide6.QtWidgets import QApplication
 
-    from . import APP_NAME, __version__
+    from . import APP_NAME, ORG, __version__
     from .i18n import i18n
     from .storage import config_path
     from .ui.icons import app_icon
@@ -41,12 +41,12 @@ def main(argv: list[str] | None = None) -> int:
         try:
             import ctypes
 
-            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(f"ccbs.{APP_NAME}.{__version__}")
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(f"{ORG}.{APP_NAME}")
         except Exception as e:  # noqa: BLE001
             logger.warning("SetCurrentProcessExplicitAppUserModelID failed: {}", e)
 
     app = QApplication(sys.argv)
-    app.setOrganizationName("ccbs")
+    app.setOrganizationName(ORG)
     app.setApplicationName(APP_NAME)
     app.setApplicationVersion(__version__)
     app.setStyle("Fusion")

@@ -5,7 +5,7 @@ import os
 import shutil
 from pathlib import Path
 
-from . import APP_NAME
+from . import APP_NAME, ORG
 from .log import APP_DATA_DIR, logger
 from .models import Connection
 
@@ -27,7 +27,7 @@ def known_hosts_path() -> Path:
 
 def sessions_dir() -> Path:
     base = os.environ.get("LOCALAPPDATA") or str(app_data_dir())
-    d = Path(base) / "ccbs" / APP_NAME / "sessions"
+    d = Path(base) / ORG / APP_NAME / "sessions"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
